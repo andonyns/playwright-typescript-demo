@@ -1,0 +1,21 @@
+{
+  "name": "playwright-typescript-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andonyns/playwright-typescript-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andonyns/playwright-typescript-demo/issues"
+  },
+  "homepage": "https://github.com/andonyns/playwright-typescript-demo#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.20.0"
+  }
+}
