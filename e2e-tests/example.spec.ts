@@ -372,7 +372,7 @@ test.describe('Routing', () => {
   });
 });
 
-test.describe.only('Delete', () => {
+test.describe('Delete', () => {
   test.beforeEach(async ({ page }) => {
     await createDefaultTodos(page);
   });
