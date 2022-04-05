@@ -32,6 +32,7 @@ test.describe('New Todo', () => {
     ]);
 
     expect(await page.screenshot()).toMatchSnapshot();
+    expect(await page.locator('.view label').nth(1).textContent()).toMatchSnapshot();
   });
 
   test('should clear text input field when an item is added', async ({ page }) => {
