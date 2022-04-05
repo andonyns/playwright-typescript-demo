@@ -25,14 +25,13 @@ test.describe('New Todo', () => {
     await page.locator('.new-todo').fill(TODO_ITEMS[1]);
     await page.locator('.new-todo').press('Enter');
 
+    await page.pause();
+
     // Make sure the list now has two todo items.
     await expect(page.locator('.view label')).toHaveText([
       TODO_ITEMS[0],
       TODO_ITEMS[1]
     ]);
-
-    expect(await page.screenshot()).toMatchSnapshot();
-    expect(await page.locator('.view label').nth(1).textContent()).toMatchSnapshot();
   });
 
   test('should clear text input field when an item is added', async ({ page }) => {
