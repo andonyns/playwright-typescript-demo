@@ -11,7 +11,7 @@ const TODO_ITEMS = [
 ];
 
 test.describe('New Todo', () => {
-  test('should allow me to add todo items', async ({ page }) => {
+  test.only('should allow me to add todo items', async ({ page }) => {
     // Create 1st todo.
     await page.locator('.new-todo').fill(TODO_ITEMS[0]);
     await page.locator('.new-todo').press('Enter');
@@ -30,6 +30,8 @@ test.describe('New Todo', () => {
       TODO_ITEMS[0],
       TODO_ITEMS[1]
     ]);
+
+    expect(await page.screenshot()).toMatchSnapshot();
   });
 
   test('should clear text input field when an item is added', async ({ page }) => {
