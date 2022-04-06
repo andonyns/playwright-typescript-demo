@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "test-headed": "playwright test --headed"
   },
   "repository": {
     "type": "git",
