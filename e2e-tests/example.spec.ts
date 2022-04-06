@@ -372,6 +372,23 @@ test.describe('Routing', () => {
   });
 });
 
+test.describe('Delete', () => {
+  test.beforeEach(async ({ page }) => {
+    await createDefaultTodos(page);
+  });
+
+  test('should delete item when clicking on the x', async ({ page }) => {
+    const todoItems = page.locator('.todo-list li');
+    const firstItem = todoItems.nth(1);
+    //Go over the element so that it becomes visible
+    await firstItem.hover();
+    //Click on the button now that it's visible
+    await firstItem.locator('.destroy').click();
+    await expect(todoItems).toHaveCount(2);
+    await expect(todoItems).toHaveText([TODO_ITEMS[0], TODO_ITEMS[2]]);
+  });
+});
+
 async function createDefaultTodos(page: Page) {
   for (const item of TODO_ITEMS) {
     await page.locator('.new-todo').fill(item);
